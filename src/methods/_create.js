@@ -1,33 +1,27 @@
-function create(tagName, attrs) {
-    const element = this(document.createElement(tagName));
-    const children = [].slice.apply(arguments)
+function create(html, attributes) {
+    const element = u(html);
+    const children = element
+        .slice(arguments)
         .slice(2);
-    let value;
 
-    for (let type in attrs) {
-        value = attrs[type];
+    for (let prop in attributes) {
+        let value = attributes[prop];
+        if (prop === 'text' || prop === 'css') {
+            element[prop](value);
 
-        if (type === 'text') {
-            element.text(value);
-        }
-        else if (type === 'css') {
-            for (let prop in value) {
-                element.css(prop, value[prop]);
-            }
-        }
-        else if (type === 'on') {
+        } else if (prop === 'on') {
             for (let event in value) {
                 element.on(event, value[event]);
             }
-        }
-        else {
-            element.attr(type, value);
+        } else {
+            element.attr(prop, value);
         }
     }
 
     if (children.length) {
         element.appends.apply(element, children);
     }
+
     return element;
 }
 
