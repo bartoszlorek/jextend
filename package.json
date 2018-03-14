@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ubery/uplug.git"
+    "url": "git+https://github.com/bartoszlorek/uplug.git"
   },
   "author": "Bartosz Lorek",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ubery/uplug/issues"
+    "url": "https://github.com/bartoszlorek/uplug/issues"
   },
-  "homepage": "https://github.com/ubery/uplug#readme",
+  "homepage": "https://github.com/bartoszlorek/uplug#readme",
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.4.0",
